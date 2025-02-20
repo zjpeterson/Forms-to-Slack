@@ -10,9 +10,13 @@ function onFormSubmit(event) {
   // Get the form response and item responses.
   var formResponse = event.response;
   var itemResponses = formResponse.getItemResponses();
+  var respondentEmail = formResponse.getRespondentEmail();
 
   // Initialize an empty object to store the form data.
   var formData = {};
+
+  // Add respondent to form data
+  formData['Email Address'] = respondentEmail;
 
   // Loop through each item response and add it to the formData object.
   for (var i = 0; i < itemResponses.length; i++) {
